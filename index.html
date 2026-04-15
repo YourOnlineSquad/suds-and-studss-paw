@@ -46,7 +46,9 @@
 
     <style>
         :root {
+            /* Adjusted for more pink in the gradient */
             --brand-pink: #ff6bb5;
+            --brand-pink-intense: #ff47a3; 
             --brand-blue: #4db8ff;
             --dark-bg: #0b1120;
             --darker-bg: #040814;
@@ -144,21 +146,21 @@
             font-weight: 600;
         }
 
-        /* Animated Title Gradient */
+        /* Animated Title Gradient - More Pink */
         .gradient-text {
-            background: linear-gradient(90deg, var(--brand-pink), var(--brand-blue), var(--brand-pink));
-            background-size: 200% auto;
+            background: linear-gradient(90deg, var(--brand-pink-intense), var(--brand-blue), var(--brand-pink), var(--brand-pink-intense));
+            background-size: 300% auto;
             color: #fff;
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: shine 4s linear infinite;
+            animation: shine 5s linear infinite;
             display: inline-block;
         }
 
         @keyframes shine {
             to {
-                background-position: 200% center;
+                background-position: 300% center;
             }
         }
 
@@ -535,8 +537,17 @@
             .section-subtitle { text-align: center; }
             .btn { display: flex; width: 100%; margin-bottom: 1rem; text-align: center; justify-content: center; }
             .btn-group { display: flex; flex-direction: column; }
-            .mobile-reverse { display: flex; flex-direction: column-reverse; }
-            .mobile-reverse > div:last-child { margin-bottom: 2rem; }
+            
+            /* Swap order on Mobile for specific sections */
+            .mobile-reverse { display: flex; flex-direction: column; } 
+            .mobile-reverse > div:first-child { order: 2; margin-top: 2rem; } /* Text below image on mobile */
+            .mobile-reverse > div:last-child { order: 1; } /* Image above text on mobile */
+
+            /* Mobile FAQ and Areas ordering */
+            .mobile-faq-areas { display: flex; flex-direction: column; }
+            .mobile-faq-areas > div:first-child { order: 2; margin-top: 2rem;} /* Areas at bottom */
+            .mobile-faq-areas > div:last-child { order: 1; } /* FAQ at top */
+            
             header { text-align: center; padding: 1rem 0; }
             .header-container { flex-direction: column; gap: 1rem; }
             .contact-info { flex-direction: row; justify-content: center; gap: 1.5rem; flex-wrap: wrap;} 
@@ -573,7 +584,7 @@
             <div class="grid-2 mobile-reverse">
                 <div>
                     <span class="eyebrow gradient-text">State of the Art Mobile Spaw</span>
-                    <h1 class="section-title">Premium Mobile Dog Grooming <br><span class="gradient-text">Directly To Your Door.</span></h1>
+                    <h1 class="section-title">Premium Mobile Dog <span class="gradient-text">Grooming</span> <br>Directly To Your <span class="gradient-text">Door.</span></h1>
                     
                     <img src="assets/images/suds-and-studss-paw-logo.png" alt="Suds and Studs Spaw Logo" class="hero-animated-logo">
 
@@ -604,7 +615,7 @@
         <div class="container reveal">
             <div style="text-align: center; margin-bottom: 5rem;">
                 <span class="eyebrow gradient-text">Our Treatments</span>
-                <h2 class="section-title">Premium Mobile Spaw Experiences</h2>
+                <h2 class="section-title">Premium Mobile <span class="gradient-text">Spaw</span> Experiences</h2>
                 <p class="section-subtitle" style="margin: 0 auto;">Personalized care directly to your property in Santa Ana and Orange County.</p>
             </div>
             <div class="grid-3">
@@ -632,7 +643,7 @@
             <div class="grid-2">
                 <div class="reveal">
                     <span class="eyebrow gradient-text">The Mobile Solution</span>
-                    <h2 class="section-title">Leaving Your Pet in a Chaotic Salon Causes <span class="gradient-text">Massive Anxiety.</span></h2>
+                    <h2 class="section-title">Leaving Your <span class="gradient-text">Pet</span> in a Chaotic Salon Causes Massive <span class="gradient-text">Anxiety.</span></h2>
                     <p class="body-copy">As certified technicians we often see pets developing severe anxiety due to traditional grooming shop visits. Dropping off your pet for an all day ordeal in a loud chaotic environment filled with barking dogs is detrimental to their well being.</p>
                     <p class="body-copy">Over time this causes your dog to associate grooming with extreme fear rather than relief. If left unaddressed grooming becomes a traumatic event.</p>
                     <h3 style="color: #fff; font-size: 1.5rem; margin: 2rem 0 1rem;">The Suds and Studs Solution</h3>
@@ -649,7 +660,7 @@
         <div class="container reveal">
             <div style="text-align: center; margin-bottom: 5rem;">
                 <span class="eyebrow gradient-text">Step by Step Spaw</span>
-                <h2 class="section-title">The Seamless Experience</h2>
+                <h2 class="section-title">The <span class="gradient-text">Seamless</span> Experience</h2>
             </div>
             <div class="grid-4">
                 <div class="glass-card" style="padding: 2rem;">
@@ -704,7 +715,7 @@
 
     <section class="section">
         <div class="container">
-            <div class="grid-2">
+            <div class="grid-2 mobile-faq-areas">
                 <div class="reveal">
                     <span class="eyebrow gradient-text">Learn More</span>
                     <h2 class="section-title">Frequently Asked <span class="gradient-text">Questions</span></h2>
@@ -743,7 +754,7 @@
 
     <section class="section reveal" style="text-align: center; border-top: 1px solid rgba(255,107,181,0.2); padding: 8rem 0; background: linear-gradient(180deg, transparent, rgba(77,184,255,0.05));">
         <div class="container">
-            <h2 class="section-title" style="font-size: 4rem; margin-bottom: 2rem;">Ready for a Stress Free <span class="gradient-text">Spaw Day?</span></h2>
+            <h2 class="section-title" style="font-size: 4rem; margin-bottom: 2rem;">Ready for a Stress Free <span class="gradient-text">Spaw</span> Day?</h2>
             <p class="section-subtitle" style="margin: 0 auto 4rem; font-size: 1.4rem;">Join hundreds of happy pet parents who have switched to the convenience of high end modern mobile grooming.</p>
             <div class="btn-group" style="display: flex; gap: 2rem; justify-content: center;">
                 <a href="tel:5627569628" class="btn btn-glow" style="font-size: 1.3rem; padding: 1.5rem 4rem;">Text 562 756 9628 To Book</a>
