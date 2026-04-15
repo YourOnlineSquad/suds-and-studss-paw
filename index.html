@@ -537,10 +537,13 @@
             .btn { display: flex; width: 100%; margin-bottom: 1rem; text-align: center; justify-content: center; }
             .btn-group { display: flex; flex-direction: column; }
             
-            /* Swap order on Mobile for Hero and General sections */
-            .mobile-reverse { display: flex; flex-direction: column; } 
-            .mobile-reverse > div:first-child { order: 2; margin-top: 2rem; } /* Text below image */
-            .mobile-reverse > div:last-child { order: 1; } /* Image on top */
+            /* Center texts for the mobile version */
+            .hero-section * { text-align: center; }
+            
+            /* Swap order on Mobile to Picture should be below the header, logo, paragraph, and buttons */
+            .mobile-column-stack { display: flex; flex-direction: column; } 
+            .mobile-column-stack > div:first-child { order: 1; margin-bottom: 2rem; } /* Text and buttons on top on mobile */
+            .mobile-column-stack > div:last-child { order: 2; } /* Image below text on mobile */
 
             header { text-align: center; padding: 1rem 0; }
             .header-container { flex-direction: column; gap: 1rem; }
@@ -575,7 +578,7 @@
 
     <section class="section hero-section reveal" style="min-height: 100vh; display: flex; align-items: center; padding-top: 8rem;">
         <div class="container">
-            <div class="grid-2 mobile-reverse">
+            <div class="grid-2 mobile-column-stack">
                 <div>
                     <span class="eyebrow gradient-text">State of the Art Mobile Spaw</span>
                     <h1 class="section-title">Premium Mobile Dog <span class="gradient-text">Grooming</span> <br>Directly To Your <span class="gradient-text">Door.</span></h1>
@@ -583,7 +586,7 @@
                     <img src="assets/images/suds-and-studss-paw-logo.png" alt="Suds and Studs Spaw Logo" class="hero-animated-logo">
 
                     <p class="section-subtitle">Our technicians provide a calm sanitized spaw experience right outside your home. Save time eliminate stress and keep your pup perfectly pampered.</p>
-                    <div class="btn-group" style="display: flex; gap: 1.5rem; margin-top: 2.5rem;">
+                    <div class="btn-group" style="display: flex; gap: 1.5rem; margin-top: 2.5rem; justify-content: center;">
                         <a href="tel:5627569628" class="btn btn-glow">Text To Book:<br>562 756 9628</a>
                         <a href="#services" class="btn btn-outline">View Spaw Services</a>
                     </div>
