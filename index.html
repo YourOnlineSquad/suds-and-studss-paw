@@ -172,7 +172,7 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
+            text-align: center; /* Forces text to center if it wraps */
             padding: 1.2rem 2.5rem;
             font-family: var(--font-headings);
             font-size: 1.3rem; /* Slightly larger for Chewy font */
@@ -182,7 +182,7 @@
             transition: all 0.3s ease;
             cursor: pointer;
             border: none;
-            border-radius: 0;
+            border-radius: 0; /* Square buttons */
             position: relative;
             overflow: hidden;
             z-index: 1;
@@ -239,7 +239,7 @@
             z-index: 1;
             transition: all 0.4s ease;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 0 20px rgba(77, 184, 255, 0.05);
-            text-align: center; /* Enforces absolute centering for the icon, title, and text */
+            text-align: center;
         }
 
         .glass-card:hover {
@@ -291,18 +291,18 @@
             }
         }
 
-        /* Icon Wrapper - Pink, Square, Animated */
+        /* Animated Custom Icons */
         .icon-wrapper {
             width: 80px;
             height: 80px;
             background: rgba(255, 107, 181, 0.05);
-            border: 2px solid var(--brand-pink);
+            border: 2px solid var(--brand-pink); /* Pink Square border */
             box-shadow: 0 0 20px var(--accent-glow-pink) inset, 0 0 20px var(--accent-glow-pink);
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 1.5rem auto; /* Centered with margin below */
-            color: var(--brand-pink);
+            color: var(--brand-blue); /* The SVG itself is Blue */
             border-radius: 0; /* Square borders */
             animation: icon-jiggle 3s infinite ease-in-out; /* Custom jiggle animation */
         }
@@ -310,7 +310,7 @@
         .icon-wrapper svg {
             width: 40px;
             height: 40px;
-            filter: drop-shadow(0 0 5px var(--brand-pink));
+            filter: drop-shadow(0 0 5px var(--brand-blue)); /* Blue glow on the SVG */
         }
 
         @keyframes icon-jiggle {
@@ -365,7 +365,7 @@
         }
 
         .social-svg {
-            width: 36px;
+            width: 36px; /* Bigger Icons */
             height: 36px;
             transition: transform 0.3s ease, filter 0.3s ease;
         }
@@ -540,7 +540,7 @@
         /* Mobile Experience */
         @media (max-width: 992px) {
             .grid-2, .grid-3, .grid-4, .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-            .section-title { font-size: 2.8rem; text-align: center; } 
+            .section-title { font-size: 2.8rem; text-align: center; } /* Adjusted for Chewy */
             .section-subtitle { text-align: center; }
             .btn { display: flex; width: 100%; margin-bottom: 1rem; text-align: center; justify-content: center; }
             .btn-group { display: flex; flex-direction: column; }
@@ -550,8 +550,8 @@
             
             /* Swap order on Mobile to Picture should be below the header, logo, paragraph, and buttons */
             .mobile-column-stack { display: flex; flex-direction: column; } 
-            .mobile-column-stack > div:first-child { order: 1; margin-bottom: 2rem; } 
-            .mobile-column-stack > div:last-child { order: 2; } 
+            .mobile-column-stack > div:first-child { order: 1; margin-bottom: 2rem; } /* Text and buttons on top on mobile */
+            .mobile-column-stack > div:last-child { order: 2; } /* Image below text on mobile */
 
             header { text-align: center; padding: 1rem 0; }
             .header-container { flex-direction: column; gap: 1rem; }
@@ -626,23 +626,29 @@
             <div class="grid-3">
                 <div class="glass-card reveal">
                     <div class="icon-wrapper">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 14h-1v-2c0-1.1-.9-2-2-2H7c-1.1 0-2 .9-2 2v2H4c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2v1c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-1h8v1c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-1c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2zM7 12h10v2H7v-2zM11 4h2v5h-2V4zM8 5h2v2H8V5zm4-3h2v2h-2V2z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                           <path d="M12 4c-4.42 0-8 3.58-8 8v4h2v-4c0-3.31 2.69-6 6-6s6 2.69 6 6v4h2v-4c0-4.42-3.58-8-8-8zm-1 9c0 .55-.45 1-1 1s-1-.45-1-1v-4c0-.55.45-1 1-1s1 .45 1 1v4zm2.5 0c0 .55-.45 1-1 1s-1-.45-1-1v-4c0-.55.45-1 1-1s1 .45 1 1v4zm2.5 0c0 .55-.45 1-1 1s-1-.45-1-1v-4c0-.55.45-1 1-1s1 .45 1 1v4zm2.5 0c0 .55-.45 1-1 1s-1-.45-1-1v-4c0-.55.45-1 1-1s1 .45 1 1v4z"/>
+                        </svg>
                     </div>
-                    <h3>Luxury Bath and Brush</h3>
+                    <h3>Luxury <span class="gradient-text">Bath</span> and Brush</h3>
                     <p class="body-copy">Deep cleansing hydro massage bath with premium sanitized shampoos thorough brush out nail trim and ear cleaning. Saving you time while giving your pup maximum care.</p>
                 </div>
                 <div class="glass-card reveal">
                     <div class="icon-wrapper">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 2H8c-1.1 0-2 .9-2 2v4h12V4c0-1.1-.9-2-2-2zM9 4h6v2H9V4zm-1 7h8l1 9c0 1.1-.9 2-2 2H9c-1.1 0-2-.9-2-2l1-9zm2 2v5h2v-5h-2zm4 0v5h2v-5h-2z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                           <path d="M9.64 7.64c.23-.5.36-1.05.36-1.64 0-2.21-1.79-4-4-4S2 3.79 2 6s1.79 4 4 4c.59 0 1.14-.13 1.64-.36L10 12l-2.36 2.36C7.14 14.13 6.59 14 6 14c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4c0-.59-.13-1.14-.36-1.64L12 14l7 7h3v-1L9.64 7.64zM6 8c-1.1 0-2-.89-2-2s.9-2 2-2 2 .89 2 2-.9 2-2 2zm0 12c-1.1 0-2-.89-2-2s.9-2 2-2 2 .89 2 2-.9 2-2 2zm6-7.5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5.5.22.5.5-.22.5-.5.5zM19 3l-6 6 2 2 7-7V3z"/>
+                        </svg>
                     </div>
-                    <h3>The Full Haircut Spaw</h3>
+                    <h3>The Full <span class="gradient-text">Haircut</span> Spaw</h3>
                     <p class="body-copy">Everything in our Luxury Bath Spaw plus a custom breed standard or personality haircut crafted to your specifications. Certified technical skill at your doorstep.</p>
                 </div>
                 <div class="glass-card reveal">
                     <div class="icon-wrapper">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 8v4c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V8c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2zm-2 0H4v2h1v4h2v-4h2v4h2v-4h2v4h2v-4h2v4h2v-4h1V8z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                           <path d="M22 8v4c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V8c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2zm-2 0H4v2h1v4h2v-4h2v4h2v-4h2v4h2v-4h1V8z"/>
+                        </svg>
                     </div>
-                    <h3>Specialty Deshedding</h3>
+                    <h3>Specialty <span class="gradient-text">Deshedding</span></h3>
                     <p class="body-copy">A multi step technical treatment with specialized premium conditioners and intensive undercoat removal. The absolute solution to your vacuuming troubles.</p>
                 </div>
             </div>
@@ -657,7 +663,7 @@
                     <h2 class="section-title">Leaving Your <span class="gradient-text">Pet</span> in a Salon Causes Massive <span class="gradient-text">Anxiety.</span></h2>
                     <p class="body-copy">As certified technicians we often see pets developing severe anxiety due to traditional grooming shop visits. Dropping off your pet for an all day ordeal in a loud chaotic environment filled with barking dogs is detrimental to their well being.</p>
                     <p class="body-copy">Over time this causes your dog to associate grooming with extreme fear rather than relief. If left unaddressed grooming becomes a traumatic event.</p>
-                    <h3 style="color: #fff; font-size: 2rem; margin: 2rem 0 1rem; font-family: var(--font-headings);">The Suds and Studs Solution</h3>
+                    <h3 style="color: #fff; font-size: 2rem; margin: 2rem 0 1rem; font-family: var(--font-headings);">The Suds and Studs <span class="gradient-text">Solution</span></h3>
                     <p class="body-copy">We eliminate the commute the cages and the chaos. By bringing our state of the art mobile spaw to your driveway your dog receives individualized one on one attention in a sanitized quiet environment.</p>
                 </div>
                 <div class="reveal">
@@ -676,22 +682,22 @@
             <div class="grid-4">
                 <div class="glass-card" style="padding: 2rem;">
                     <div class="gradient-text" style="font-size: 3.5rem; font-weight: 700; line-height: 1; font-family: var(--font-headings);">01</div>
-                    <h3 style="margin: 1rem 0;">Text To Book</h3>
+                    <h3 style="margin: 1rem 0;">Text To <span class="gradient-text">Book</span></h3>
                     <p class="body-copy" style="font-size: 1rem;">Text us at 562 756 9628. We will send reminders the week of your scheduled appointment.</p>
                 </div>
                 <div class="glass-card" style="padding: 2rem;">
                     <div class="gradient-text" style="font-size: 3.5rem; font-weight: 700; line-height: 1; font-family: var(--font-headings);">02</div>
-                    <h3 style="margin: 1rem 0;">We Arrive</h3>
+                    <h3 style="margin: 1rem 0;">We <span class="gradient-text">Arrive</span></h3>
                     <p class="body-copy" style="font-size: 1rem;">Our state of the art van arrives at your property. We provide our own water and power supply.</p>
                 </div>
                 <div class="glass-card" style="padding: 2rem;">
                     <div class="gradient-text" style="font-size: 3.5rem; font-weight: 700; line-height: 1; font-family: var(--font-headings);">03</div>
-                    <h3 style="margin: 1rem 0;">Cage Free Care</h3>
+                    <h3 style="margin: 1rem 0;">Cage Free <span class="gradient-text">Care</span></h3>
                     <p class="body-copy" style="font-size: 1rem;">Your pet receives full one on one attention with premium sanitized products without stressful interactions.</p>
                 </div>
                 <div class="glass-card" style="padding: 2rem;">
                     <div class="gradient-text" style="font-size: 3.5rem; font-weight: 700; line-height: 1; font-family: var(--font-headings);">04</div>
-                    <h3 style="margin: 1rem 0;">Fresh Return</h3>
+                    <h3 style="margin: 1rem 0;">Fresh <span class="gradient-text">Return</span></h3>
                     <p class="body-copy" style="font-size: 1rem;">We return your impeccably groomed pup to your front door saving you hours of commuting.</p>
                 </div>
             </div>
@@ -703,10 +709,10 @@
             <div class="grid-2">
                 <div class="reveal">
                     <span class="eyebrow gradient-text">Booking Guidelines</span>
-                    <h2 class="section-title">Cancellation and <span class="gradient-text">No Show Policy</span></h2>
+                    <h2 class="section-title">Cancellation and <span class="gradient-text">No Show</span> Policy</h2>
                     <p class="body-copy">To maintain our reliable local service we strictly adhere to booking guidelines. Our clients value the massive time savings which requires mutual reliability. Text reminders are sent week of.</p>
                     <div class="policy-box">
-                        <h3 style="color: #fff; font-size: 2rem; margin-bottom: 1.5rem; font-family: var(--font-headings);">Standard Spaw Policies</h3>
+                        <h3 style="color: #fff; font-size: 2rem; margin-bottom: 1.5rem; font-family: var(--font-headings);">Standard Spaw <span class="gradient-text">Policies</span></h3>
                         <ul>
                             <li>Cancellation notice is required at least 48 hours in advance</li>
                             <li>Cancellations with less than 48 hours notice require a 35 dollar No Show Fee</li>
