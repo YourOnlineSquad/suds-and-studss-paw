@@ -8,7 +8,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
     
     <script type="application/ld+json">
     {
@@ -56,7 +56,8 @@
             --text-dark: #0f172a;
             --accent-glow-pink: rgba(255, 107, 181, 0.6);
             --accent-glow-blue: rgba(77, 184, 255, 0.6);
-            --font-headings: 'Fredoka', cursive;
+            /* Applied Chewy Font */
+            --font-headings: 'Chewy', system-ui, cursive;
             --font-body: 'Quicksand', sans-serif;
             
             /* Traditional Social Media Colors */
@@ -112,15 +113,15 @@
         /* Typography */
         h1, h2, h3, h4, .brand-text {
             font-family: var(--font-headings);
+            font-weight: 400; /* Chewy is naturally bold */
+            letter-spacing: 1px;
         }
 
         .section-title {
-            font-size: 3rem;
-            font-weight: 700;
+            font-size: 3.5rem;
             margin-bottom: 1.5rem;
             line-height: 1.2;
             color: #ffffff;
-            letter-spacing: 1px;
         }
 
         .section-subtitle {
@@ -137,6 +138,7 @@
             font-size: 0.9rem;
             margin-bottom: 1rem;
             display: inline-block;
+            font-family: var(--font-body);
         }
 
         .body-copy {
@@ -156,6 +158,7 @@
             -webkit-text-fill-color: transparent;
             animation: shine 5s linear infinite;
             display: inline-block;
+            padding-bottom: 0.1em; /* prevents font clipping on cursive */
         }
 
         @keyframes shine {
@@ -169,18 +172,17 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            text-align: center; /* Forces text to center if it wraps */
+            text-align: center;
             padding: 1.2rem 2.5rem;
             font-family: var(--font-headings);
-            font-size: 1.1rem;
-            font-weight: 700;
+            font-size: 1.3rem; /* Slightly larger for Chewy font */
             text-decoration: none;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             transition: all 0.3s ease;
             cursor: pointer;
             border: none;
-            border-radius: 0; /* Square buttons */
+            border-radius: 0;
             position: relative;
             overflow: hidden;
             z-index: 1;
@@ -247,9 +249,8 @@
 
         .glass-card h3 {
             color: #fff;
-            font-size: 1.8rem;
+            font-size: 2rem;
             margin-bottom: 1rem;
-            letter-spacing: 1px;
         }
 
         /* Visual Elements & Logo Animation */
@@ -270,7 +271,7 @@
         }
 
         .hero-animated-logo {
-            max-width: 280px;
+            max-width: 320px; /* Slightly larger for impact */
             width: 100%;
             height: auto;
             margin: 1.5rem 0 2rem 0;
@@ -300,7 +301,7 @@
             justify-content: center;
             margin-bottom: 1.5rem;
             color: var(--brand-blue);
-            border-radius: 0; /* Square icons */
+            border-radius: 0;
         }
 
         .icon-wrapper svg {
@@ -330,10 +331,9 @@
         }
 
         .brand-text {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: #fff;
             text-decoration: none;
-            text-transform: uppercase;
             letter-spacing: 2px;
             text-shadow: 0 0 10px var(--accent-glow-pink);
         }
@@ -356,9 +356,8 @@
             transition: all 0.3s ease;
         }
 
-        /* Social SVG Sizing and Colors */
         .social-svg {
-            width: 36px; /* Bigger Icons */
+            width: 36px;
             height: 36px;
             transition: transform 0.3s ease, filter 0.3s ease;
         }
@@ -402,6 +401,7 @@
             color: #fff;
             text-transform: uppercase;
             letter-spacing: 1px;
+            font-family: var(--font-body);
         }
 
         .trust-item svg {
@@ -427,8 +427,7 @@
 
         .faq-question {
             font-family: var(--font-headings);
-            font-weight: 700;
-            font-size: 1.4rem;
+            font-size: 1.8rem;
             margin-bottom: 0.5rem;
             color: #fff;
             letter-spacing: 1px;
@@ -489,7 +488,7 @@
 
         .footer-heading {
             font-family: var(--font-headings);
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: #fff;
             margin-bottom: 1.5rem;
             letter-spacing: 1px;
@@ -533,21 +532,16 @@
         /* Mobile Experience */
         @media (max-width: 992px) {
             .grid-2, .grid-3, .grid-4, .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-            .section-title { font-size: 2.2rem; text-align: center; }
+            .section-title { font-size: 2.8rem; text-align: center; } /* Adjusted for Chewy */
             .section-subtitle { text-align: center; }
             .btn { display: flex; width: 100%; margin-bottom: 1rem; text-align: center; justify-content: center; }
             .btn-group { display: flex; flex-direction: column; }
             
-            /* Swap order on Mobile for specific sections */
+            /* Swap order on Mobile for Hero and General sections */
             .mobile-reverse { display: flex; flex-direction: column; } 
-            .mobile-reverse > div:first-child { order: 2; margin-top: 2rem; } /* Text below image on mobile */
-            .mobile-reverse > div:last-child { order: 1; } /* Image above text on mobile */
+            .mobile-reverse > div:first-child { order: 2; margin-top: 2rem; } /* Text below image */
+            .mobile-reverse > div:last-child { order: 1; } /* Image on top */
 
-            /* Mobile FAQ and Areas ordering */
-            .mobile-faq-areas { display: flex; flex-direction: column; }
-            .mobile-faq-areas > div:first-child { order: 2; margin-top: 2rem;} /* Areas at bottom */
-            .mobile-faq-areas > div:last-child { order: 1; } /* FAQ at top */
-            
             header { text-align: center; padding: 1rem 0; }
             .header-container { flex-direction: column; gap: 1rem; }
             .contact-info { flex-direction: row; justify-content: center; gap: 1.5rem; flex-wrap: wrap;} 
@@ -643,10 +637,10 @@
             <div class="grid-2">
                 <div class="reveal">
                     <span class="eyebrow gradient-text">The Mobile Solution</span>
-                    <h2 class="section-title">Leaving Your <span class="gradient-text">Pet</span> in a Chaotic Salon Causes Massive <span class="gradient-text">Anxiety.</span></h2>
+                    <h2 class="section-title">Leaving Your <span class="gradient-text">Pet</span> in a Salon Causes Massive <span class="gradient-text">Anxiety.</span></h2>
                     <p class="body-copy">As certified technicians we often see pets developing severe anxiety due to traditional grooming shop visits. Dropping off your pet for an all day ordeal in a loud chaotic environment filled with barking dogs is detrimental to their well being.</p>
                     <p class="body-copy">Over time this causes your dog to associate grooming with extreme fear rather than relief. If left unaddressed grooming becomes a traumatic event.</p>
-                    <h3 style="color: #fff; font-size: 1.5rem; margin: 2rem 0 1rem;">The Suds and Studs Solution</h3>
+                    <h3 style="color: #fff; font-size: 2rem; margin: 2rem 0 1rem; font-family: var(--font-headings);">The Suds and Studs Solution</h3>
                     <p class="body-copy">We eliminate the commute the cages and the chaos. By bringing our state of the art mobile spaw to your driveway your dog receives individualized one on one attention in a sanitized quiet environment.</p>
                 </div>
                 <div class="reveal">
@@ -665,22 +659,22 @@
             <div class="grid-4">
                 <div class="glass-card" style="padding: 2rem;">
                     <div class="gradient-text" style="font-size: 3.5rem; font-weight: 700; line-height: 1; font-family: var(--font-headings);">01</div>
-                    <h3 style="margin: 1rem 0; font-size: 1.4rem;">Text To Book</h3>
+                    <h3 style="margin: 1rem 0;">Text To Book</h3>
                     <p class="body-copy" style="font-size: 1rem;">Text us at 562 756 9628. We will send reminders the week of your scheduled appointment.</p>
                 </div>
                 <div class="glass-card" style="padding: 2rem;">
                     <div class="gradient-text" style="font-size: 3.5rem; font-weight: 700; line-height: 1; font-family: var(--font-headings);">02</div>
-                    <h3 style="margin: 1rem 0; font-size: 1.4rem;">We Arrive</h3>
+                    <h3 style="margin: 1rem 0;">We Arrive</h3>
                     <p class="body-copy" style="font-size: 1rem;">Our state of the art van arrives at your property. We provide our own water and power supply.</p>
                 </div>
                 <div class="glass-card" style="padding: 2rem;">
                     <div class="gradient-text" style="font-size: 3.5rem; font-weight: 700; line-height: 1; font-family: var(--font-headings);">03</div>
-                    <h3 style="margin: 1rem 0; font-size: 1.4rem;">Cage Free Care</h3>
+                    <h3 style="margin: 1rem 0;">Cage Free Care</h3>
                     <p class="body-copy" style="font-size: 1rem;">Your pet receives full one on one attention with premium sanitized products without stressful interactions.</p>
                 </div>
                 <div class="glass-card" style="padding: 2rem;">
                     <div class="gradient-text" style="font-size: 3.5rem; font-weight: 700; line-height: 1; font-family: var(--font-headings);">04</div>
-                    <h3 style="margin: 1rem 0; font-size: 1.4rem;">Fresh Return</h3>
+                    <h3 style="margin: 1rem 0;">Fresh Return</h3>
                     <p class="body-copy" style="font-size: 1rem;">We return your impeccably groomed pup to your front door saving you hours of commuting.</p>
                 </div>
             </div>
@@ -695,7 +689,7 @@
                     <h2 class="section-title">Cancellation and <span class="gradient-text">No Show Policy</span></h2>
                     <p class="body-copy">To maintain our reliable local service we strictly adhere to booking guidelines. Our clients value the massive time savings which requires mutual reliability. Text reminders are sent week of.</p>
                     <div class="policy-box">
-                        <h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 1.5rem;">Standard Spaw Policies</h3>
+                        <h3 style="color: #fff; font-size: 2rem; margin-bottom: 1.5rem; font-family: var(--font-headings);">Standard Spaw Policies</h3>
                         <ul>
                             <li>Cancellation notice is required at least 48 hours in advance</li>
                             <li>Cancellations with less than 48 hours notice require a 35 dollar No Show Fee</li>
@@ -715,21 +709,13 @@
 
     <section class="section">
         <div class="container">
-            <div class="grid-2 mobile-faq-areas">
-                <div class="reveal">
-                    <span class="eyebrow gradient-text">Learn More</span>
-                    <h2 class="section-title">Frequently Asked <span class="gradient-text">Questions</span></h2>
-                    <p class="section-subtitle">Got questions about our mobile grooming business in Orange County? We have the technical answers.</p>
-                    <div style="margin-top: 3rem;">
-                        <h3 style="color: #fff; margin-bottom: 1.5rem; font-size: 1.5rem;">Local Service Areas</h3>
-                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                            <a href="#" class="btn btn-outline" style="padding: 0.8rem 1.5rem; font-size: 1rem;">Santa Ana</a>
-                            <a href="#" class="btn btn-outline" style="padding: 0.8rem 1.5rem; font-size: 1rem;">Orange</a>
-                            <a href="#" class="btn btn-outline" style="padding: 0.8rem 1.5rem; font-size: 1rem;">Tustin</a>
-                            <a href="#" class="btn btn-outline" style="padding: 0.8rem 1.5rem; font-size: 1rem;">Irvine</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
+                <span class="eyebrow gradient-text">Learn More</span>
+                <h2 class="section-title">Frequently Asked <span class="gradient-text">Questions</span></h2>
+                <p class="section-subtitle" style="margin: 0 auto;">Got questions about our mobile grooming business in Orange County? We have the technical answers.</p>
+            </div>
+            
+            <div class="grid-2">
                 <div class="reveal">
                     <div class="faq-item">
                         <div class="faq-question">How does mobile grooming save me time?</div>
@@ -739,6 +725,8 @@
                         <div class="faq-question">Do I need to provide water or power?</div>
                         <div class="faq-answer">No. Our mobile grooming vans are completely self contained with onboard fresh water tanks water heaters and power generators. We arrive ready to pamper.</div>
                     </div>
+                </div>
+                <div class="reveal">
                     <div class="faq-item">
                         <div class="faq-question">Is this better for anxious dogs?</div>
                         <div class="faq-answer">Absolutely. We eliminate car anxiety separation anxiety from being left in a shop all day and stress caused by other barking dogs. It is a quiet environment.</div>
@@ -747,6 +735,16 @@
                         <div class="faq-question">Can I stay in the van during the groom?</div>
                         <div class="faq-answer">For safety and the calm execution of our specialized technical process pet parents are not permitted to stay inside the van. Your pet needs maximum focus on the technician.</div>
                     </div>
+                </div>
+            </div>
+
+            <div class="reveal" style="text-align: center; margin-top: 5rem;">
+                <h3 style="color: #fff; margin-bottom: 2rem; font-size: 2.5rem; font-family: var(--font-headings);">Local <span class="gradient-text">Service</span> Areas</h3>
+                <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center;">
+                    <a href="#" class="btn btn-outline" style="padding: 1rem 2.5rem; font-size: 1.2rem;">Santa Ana</a>
+                    <a href="#" class="btn btn-outline" style="padding: 1rem 2.5rem; font-size: 1.2rem;">Orange</a>
+                    <a href="#" class="btn btn-outline" style="padding: 1rem 2.5rem; font-size: 1.2rem;">Tustin</a>
+                    <a href="#" class="btn btn-outline" style="padding: 1rem 2.5rem; font-size: 1.2rem;">Irvine</a>
                 </div>
             </div>
         </div>
@@ -766,7 +764,7 @@
         <div class="container reveal">
             <div class="footer-grid">
                 <div>
-                    <a href="/" class="brand-text" style="font-size: 1.8rem; display: block; margin-bottom: 1.5rem;">Suds & Studs Spaw</a>
+                    <a href="/" class="brand-text" style="font-size: 2.2rem; display: block; margin-bottom: 1.5rem;">Suds & Studs Spaw</a>
                     <p class="body-copy" style="font-size: 1rem; max-width: 400px;">Providing premium one on one state of the art mobile dog grooming services across Orange County. Saving you time while giving your best friend the ultimate luxury treatment.</p>
                     <div style="display: flex; gap: 1rem; margin-top: 2rem;">
                         <a href="https://www.instagram.com/sudsandstudsspaw/" class="contact-link" target="_blank" rel="noopener noreferrer">
