@@ -46,9 +46,9 @@
 
     <style>
         :root {
-            /* Enhanced Pink Palette for Gradient Flow */
+            /* Adjusted for more pink in the gradient */
             --brand-pink: #ff6bb5;
-            --brand-pink-intense: #ff1493; 
+            --brand-pink-intense: #ff47a3; 
             --brand-blue: #4db8ff;
             --dark-bg: #0b1120;
             --darker-bg: #040814;
@@ -56,8 +56,7 @@
             --text-dark: #0f172a;
             --accent-glow-pink: rgba(255, 107, 181, 0.6);
             --accent-glow-blue: rgba(77, 184, 255, 0.6);
-            
-            /* Typography */
+            /* Applied Chewy Font */
             --font-headings: 'Chewy', system-ui, cursive;
             --font-body: 'Quicksand', sans-serif;
             
@@ -114,7 +113,7 @@
         /* Typography */
         h1, h2, h3, h4, .brand-text {
             font-family: var(--font-headings);
-            font-weight: 400;
+            font-weight: 400; /* Chewy is naturally bold */
             letter-spacing: 1px;
         }
 
@@ -149,9 +148,9 @@
             font-weight: 600;
         }
 
-        /* Animated Title Gradient - More Pink and Wavy */
+        /* Animated Title Gradient - More Pink */
         .gradient-text {
-            background: linear-gradient(90deg, var(--brand-pink-intense), var(--brand-pink), var(--brand-blue), var(--brand-pink), var(--brand-pink-intense));
+            background: linear-gradient(90deg, var(--brand-pink-intense), var(--brand-blue), var(--brand-pink), var(--brand-pink-intense));
             background-size: 300% auto;
             color: #fff;
             background-clip: text;
@@ -159,7 +158,7 @@
             -webkit-text-fill-color: transparent;
             animation: shine 5s linear infinite;
             display: inline-block;
-            padding-bottom: 0.1em; /* prevents font clipping on cursive fonts */
+            padding-bottom: 0.1em; /* prevents font clipping on cursive */
         }
 
         @keyframes shine {
@@ -176,14 +175,14 @@
             text-align: center;
             padding: 1.2rem 2.5rem;
             font-family: var(--font-headings);
-            font-size: 1.3rem; 
+            font-size: 1.3rem; /* Slightly larger for Chewy font */
             text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             transition: all 0.3s ease;
             cursor: pointer;
             border: none;
-            border-radius: 0; 
+            border-radius: 0;
             position: relative;
             overflow: hidden;
             z-index: 1;
@@ -272,7 +271,7 @@
         }
 
         .hero-animated-logo {
-            max-width: 320px; 
+            max-width: 320px; /* Slightly larger for impact */
             width: 100%;
             height: auto;
             margin: 1.5rem 0 2rem 0;
@@ -291,19 +290,24 @@
             }
         }
 
-        /* Animated Dog Graphics for Services */
-        .service-graphic {
-            width: 100%;
-            max-width: 220px;
-            height: auto;
-            margin: 0 auto 1.5rem auto;
-            display: block;
-            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.3));
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        .icon-wrapper {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--brand-blue);
+            box-shadow: 0 0 20px var(--accent-glow-blue) inset;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--brand-blue);
+            border-radius: 0;
         }
 
-        .glass-card:hover .service-graphic {
-            transform: scale(1.1) translateY(-10px);
+        .icon-wrapper svg {
+            width: 35px;
+            height: 35px;
+            filter: drop-shadow(0 0 5px var(--brand-blue));
         }
 
         /* HEADER SECTION */
@@ -525,31 +529,28 @@
             transform: translateY(0);
         }
 
-        /* Mobile Experience Configuration */
+        /* Mobile Experience */
         @media (max-width: 992px) {
             .grid-2, .grid-3, .grid-4, .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-            .section-title { font-size: 2.8rem; }
+            .section-title { font-size: 2.8rem; text-align: center; } /* Adjusted for Chewy */
+            .section-subtitle { text-align: center; }
+            .btn { display: flex; width: 100%; margin-bottom: 1rem; text-align: center; justify-content: center; }
+            .btn-group { display: flex; flex-direction: column; }
             
-            /* Swap order on Mobile: Text on Top, Image on Bottom */
+            /* Center texts for the mobile version */
+            .hero-section * { text-align: center; }
+            
+            /* Swap order on Mobile to Picture should be below the header, logo, paragraph, and buttons */
             .mobile-column-stack { display: flex; flex-direction: column; } 
-            .mobile-column-stack > div:first-child { order: 1; margin-bottom: 2rem; } 
-            .mobile-column-stack > div:last-child { order: 2; } 
+            .mobile-column-stack > div:first-child { order: 1; margin-bottom: 2rem; } /* Text and buttons on top on mobile */
+            .mobile-column-stack > div:last-child { order: 2; } /* Image below text on mobile */
 
-            /* Header Adjustments */
             header { text-align: center; padding: 1rem 0; }
             .header-container { flex-direction: column; gap: 1rem; }
             .contact-info { flex-direction: row; justify-content: center; gap: 1.5rem; flex-wrap: wrap;} 
-            
-            /* Text Centering for Mobile */
-            .hero-section { padding-top: 12rem !important; }
-            .eyebrow, .section-title, .section-subtitle, .body-copy, p, h1, h2, h3, h4, .glass-card { text-align: center !important; }
+            .hero-section { padding-top: 12rem !important; text-align: center; }
+            .eyebrow { text-align: center; width: 100%; }
             .hero-animated-logo { margin: 1.5rem auto 2rem auto; } 
-            .btn { display: flex; width: 100%; margin-bottom: 1rem; justify-content: center; }
-            .btn-group { display: flex; flex-direction: column; align-items: center; }
-            
-            /* Keep Policy Bullets Left-Aligned but Center the Box */
-            .policy-box { text-align: center; }
-            .policy-box ul { display: inline-block; text-align: left; }
         }
     </style>
 </head>
@@ -585,7 +586,7 @@
                     <img src="assets/images/suds-and-studss-paw-logo.png" alt="Suds and Studs Spaw Logo" class="hero-animated-logo">
 
                     <p class="section-subtitle">Our technicians provide a calm sanitized spaw experience right outside your home. Save time eliminate stress and keep your pup perfectly pampered.</p>
-                    <div class="btn-group" style="display: flex; gap: 1.5rem; margin-top: 2.5rem;">
+                    <div class="btn-group" style="display: flex; gap: 1.5rem; margin-top: 2.5rem; justify-content: center;">
                         <a href="tel:5627569628" class="btn btn-glow">Text To Book:<br>562 756 9628</a>
                         <a href="#services" class="btn btn-outline">View Spaw Services</a>
                     </div>
@@ -616,18 +617,18 @@
             </div>
             <div class="grid-3">
                 <div class="glass-card reveal">
-                    <img src="assets/images/dog-bath-graphic.png" alt="Pomeranian in a bath tub" class="service-graphic">
-                    <h3>Luxury <span class="gradient-text">Bath</span> and Brush</h3>
+                    <div class="icon-wrapper"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/></svg></div>
+                    <h3>Luxury Bath and Brush</h3>
                     <p class="body-copy">Deep cleansing hydro massage bath with premium sanitized shampoos thorough brush out nail trim and ear cleaning. Saving you time while giving your pup maximum care.</p>
                 </div>
                 <div class="glass-card reveal">
-                    <img src="assets/images/poodle-haircut-graphic.png" alt="Poodle ready for a haircut" class="service-graphic">
-                    <h3>The Full <span class="gradient-text">Haircut</span> Spaw</h3>
+                    <div class="icon-wrapper"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M14.6 2.3l-1.3 1.3c2.7.7 4.7 3.2 4.7 6.1s-2 5.4-4.7 6.1l1.3 1.3c3.4-1.1 5.7-4.1 5.7-7.4 0-3.3-2.3-6.3-5.7-7.4z"/><path d="M9.4 21.7l1.3-1.3c-2.7-.7-4.7-3.2-4.7-6.1s2-5.4 4.7-6.1L9.4 6.9c-3.4 1.1-5.7 4.1-5.7 7.4 0 3.3 2.3 6.3 5.7 7.4z"/></svg></div>
+                    <h3>The Full Haircut Spaw</h3>
                     <p class="body-copy">Everything in our Luxury Bath Spaw plus a custom breed standard or personality haircut crafted to your specifications. Certified technical skill at your doorstep.</p>
                 </div>
                 <div class="glass-card reveal">
-                    <img src="assets/images/golden-deshed-graphic.png" alt="Golden Retriever being deshedded" class="service-graphic">
-                    <h3>Specialty <span class="gradient-text">Deshedding</span></h3>
+                    <div class="icon-wrapper"><svg fill="currentColor" viewBox="0 0 24 24"><path d="M11 11c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3zm11 0c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3zm-5.5 5.5c0 1.657-1.343 3-3 3s-3-1.343-3-3 1.343-3 3-3 3 1.343 3 3z"/></svg></div>
+                    <h3>Specialty Deshedding</h3>
                     <p class="body-copy">A multi step technical treatment with specialized premium conditioners and intensive undercoat removal. The absolute solution to your vacuuming troubles.</p>
                 </div>
             </div>
@@ -642,7 +643,7 @@
                     <h2 class="section-title">Leaving Your <span class="gradient-text">Pet</span> in a Salon Causes Massive <span class="gradient-text">Anxiety.</span></h2>
                     <p class="body-copy">As certified technicians we often see pets developing severe anxiety due to traditional grooming shop visits. Dropping off your pet for an all day ordeal in a loud chaotic environment filled with barking dogs is detrimental to their well being.</p>
                     <p class="body-copy">Over time this causes your dog to associate grooming with extreme fear rather than relief. If left unaddressed grooming becomes a traumatic event.</p>
-                    <h3 style="color: #fff; font-size: 2rem; margin: 2rem 0 1rem; font-family: var(--font-headings);">The Suds and Studs <span class="gradient-text">Solution</span></h3>
+                    <h3 style="color: #fff; font-size: 2rem; margin: 2rem 0 1rem; font-family: var(--font-headings);">The Suds and Studs Solution</h3>
                     <p class="body-copy">We eliminate the commute the cages and the chaos. By bringing our state of the art mobile spaw to your driveway your dog receives individualized one on one attention in a sanitized quiet environment.</p>
                 </div>
                 <div class="reveal">
@@ -661,22 +662,22 @@
             <div class="grid-4">
                 <div class="glass-card" style="padding: 2rem;">
                     <div class="gradient-text" style="font-size: 3.5rem; font-weight: 700; line-height: 1; font-family: var(--font-headings);">01</div>
-                    <h3 style="margin: 1rem 0;">Text To <span class="gradient-text">Book</span></h3>
+                    <h3 style="margin: 1rem 0;">Text To Book</h3>
                     <p class="body-copy" style="font-size: 1rem;">Text us at 562 756 9628. We will send reminders the week of your scheduled appointment.</p>
                 </div>
                 <div class="glass-card" style="padding: 2rem;">
                     <div class="gradient-text" style="font-size: 3.5rem; font-weight: 700; line-height: 1; font-family: var(--font-headings);">02</div>
-                    <h3 style="margin: 1rem 0;">We <span class="gradient-text">Arrive</span></h3>
+                    <h3 style="margin: 1rem 0;">We Arrive</h3>
                     <p class="body-copy" style="font-size: 1rem;">Our state of the art van arrives at your property. We provide our own water and power supply.</p>
                 </div>
                 <div class="glass-card" style="padding: 2rem;">
                     <div class="gradient-text" style="font-size: 3.5rem; font-weight: 700; line-height: 1; font-family: var(--font-headings);">03</div>
-                    <h3 style="margin: 1rem 0;">Cage Free <span class="gradient-text">Care</span></h3>
+                    <h3 style="margin: 1rem 0;">Cage Free Care</h3>
                     <p class="body-copy" style="font-size: 1rem;">Your pet receives full one on one attention with premium sanitized products without stressful interactions.</p>
                 </div>
                 <div class="glass-card" style="padding: 2rem;">
                     <div class="gradient-text" style="font-size: 3.5rem; font-weight: 700; line-height: 1; font-family: var(--font-headings);">04</div>
-                    <h3 style="margin: 1rem 0;">Fresh <span class="gradient-text">Return</span></h3>
+                    <h3 style="margin: 1rem 0;">Fresh Return</h3>
                     <p class="body-copy" style="font-size: 1rem;">We return your impeccably groomed pup to your front door saving you hours of commuting.</p>
                 </div>
             </div>
@@ -688,10 +689,10 @@
             <div class="grid-2">
                 <div class="reveal">
                     <span class="eyebrow gradient-text">Booking Guidelines</span>
-                    <h2 class="section-title">Cancellation and <span class="gradient-text">No Show</span> Policy</h2>
+                    <h2 class="section-title">Cancellation and <span class="gradient-text">No Show Policy</span></h2>
                     <p class="body-copy">To maintain our reliable local service we strictly adhere to booking guidelines. Our clients value the massive time savings which requires mutual reliability. Text reminders are sent week of.</p>
                     <div class="policy-box">
-                        <h3 style="color: #fff; font-size: 2rem; margin-bottom: 1.5rem; font-family: var(--font-headings);">Standard Spaw <span class="gradient-text">Policies</span></h3>
+                        <h3 style="color: #fff; font-size: 2rem; margin-bottom: 1.5rem; font-family: var(--font-headings);">Standard Spaw Policies</h3>
                         <ul>
                             <li>Cancellation notice is required at least 48 hours in advance</li>
                             <li>Cancellations with less than 48 hours notice require a 35 dollar No Show Fee</li>
