@@ -1,10 +1,688 @@
----
-layout: default
-title: Mobile Dog Grooming Orange County
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Mobile Dog Grooming Santa Ana, CA | Suds & Studs Spaw</title>
+    <meta name="description" content="Suds & Studs Spaw offers premium, stress-free mobile dog grooming in Santa Ana and Orange County. We bring the luxury spaw directly to your driveway. Book today!">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Suds & Studs Spaw",
+      "image": "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=80",
+      "@id": "",
+      "url": "https://www.sudsandstudsspaw.com",
+      "telephone": "(555) 123-4567",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Mobile Service Area",
+        "addressLocality": "Santa Ana",
+        "addressRegion": "CA",
+        "postalCode": "92701",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 33.7455,
+        "longitude": -117.8677
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Santa Ana"
+      },
+      "sameAs": [
+        "https://www.instagram.com/sudsandstudsspa"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "What is your cancellation and no-show policy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We require cancellation notice at least 48 hours in advance. Cancellations with less than 48 hours notice incur a $35.00 No Show fee. This fee may be avoided if we are able to fill your time slot last minute. We offer a 15-minute grace period for appointments. Two or more No Call No Shows require full payment upfront to book your next appointment."
+        }
+      },{
+        "@type": "Question",
+        "name": "Do I need to provide water or electricity for the mobile grooming van?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Our state-of-the-art mobile grooming vans are completely self-contained. We bring our own climate-controlled environment, fresh warm water, and power supply directly to your Santa Ana driveway."
+        }
+      },{
+        "@type": "Question",
+        "name": "How long does a mobile grooming appointment typically take?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most standard spaw treatments take between 1 to 2 hours, depending on the breed, coat condition, and temperament of your dog. Because we offer one-on-one attention with no cage drying, the process is much faster and less stressful than a traditional salon."
+        }
+      },{
+        "@type": "Question",
+        "name": "Is mobile dog grooming better for anxious dogs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. A common issue we see is dogs associating car rides with the loud, chaotic environment of a busy grooming shop. Over time, this causes severe anxiety. By bringing the spaw to a familiar environment and eliminating other dogs and cages, we provide a calm, one-on-one experience."
+        }
+      },{
+        "@type": "Question",
+        "name": "What areas in Orange County do you service?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our primary service area is Santa Ana, CA, and the surrounding communities within Orange County. Please contact us with your specific zip code to confirm mobile availability."
+        }
+      },{
+        "@type": "Question",
+        "name": "Do you require vaccination records?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, for the safety of your pet and our grooming technicians, we require proof of up-to-date Rabies vaccinations for all dogs prior to their first grooming appointment."
+        }
+      }]
+    }
+    </script>
 
-<h1>Mobile Dog Grooming in Orange County</h1>
+    <style>
+        :root {
+            --brand-pink: #ff6bb5;
+            --brand-blue: #4db8ff;
+            --dark-bg: #0b1120;
+            --darker-bg: #040814;
+            --light-bg: #f8fafc;
+            --text-light: #e2e8f0;
+            --text-dark: #0f172a;
+            --accent-glow: rgba(255, 107, 181, 0.4);
+            --blue-glow: rgba(77, 184, 255, 0.4);
+        }
 
-<p>Professional mobile dog grooming services brought directly to your home in Orange County, California.</p>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
 
-<p>We provide stress free grooming for your dog with convenient scheduling and expert care.</p>
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Layout Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        .section-dark {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-dark::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(11,17,32,0) 0%, var(--darker-bg) 100%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+
+        /* Typography Classes */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            color: var(--text-dark);
+        }
+
+        .section-title-light {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            color: #ffffff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: #64748b;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+        
+        .section-dark .section-subtitle {
+            color: #94a3b8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .eyebrow-gradient {
+            background: linear-gradient(90deg, var(--brand-pink), var(--brand-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .body-copy {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--brand-pink), var(--brand-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        /* Components */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 2.5rem;
+            position: relative;
+            z-index: 1;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255, 107, 181, 0.3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3), 0 0 20px var(--accent-glow);
+        }
+
+        .glass-card h3 {
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .light-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            border: 1px solid #f1f5f9;
+        }
+        
+        .light-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            text-align: center;
+        }
+
+        .btn-glow {
+            background: linear-gradient(90deg, var(--brand-pink), var(--brand-blue));
+            color: #fff;
+            box-shadow: 0 0 20px var(--accent-glow);
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-glow:hover {
+            box-shadow: 0 0 30px var(--blue-glow);
+            transform: scale(1.02);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--brand-pink);
+            color: var(--brand-pink);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 107, 181, 0.1);
+        }
+
+        .btn-outline-dark {
+            border-color: rgba(255,255,255,0.2);
+            color: #fff;
+        }
+
+        .btn-outline-dark:hover {
+            border-color: var(--brand-blue);
+            background: rgba(77, 184, 255, 0.1);
+        }
+
+        /* Visual Elements */
+        .float-img {
+            width: 100%;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            animation: float 6s ease-in-out infinite;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .hero-visual-card {
+            position: relative;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-visual-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 30px;
+            border: 2px solid rgba(255,255,255,0.1);
+            pointer-events: none;
+        }
+
+        .hero-visual-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        .icon-wrapper {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(255,107,181,0.2), rgba(77,184,255,0.2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--brand-blue);
+        }
+
+        /* Trust Strip */
+        .trust-strip {
+            background: #ffffff;
+            border-top: 1px solid #f1f5f9;
+            border-bottom: 1px solid #f1f5f9;
+            padding: 2rem 0;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-weight: 600;
+            color: #475569;
+        }
+
+        .trust-item svg {
+            width: 24px;
+            height: 24px;
+            color: var(--brand-pink);
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            padding: 1.5rem 0;
+        }
+
+        .section-dark .faq-item {
+            border-bottom-color: rgba(255,255,255,0.1);
+        }
+
+        .faq-question {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            color: #64748b;
+            font-size: 1rem;
+        }
+        
+        .section-dark .faq-answer {
+            color: #94a3b8;
+        }
+
+        /* Policy Box */
+        .policy-box {
+            background: linear-gradient(145deg, rgba(255, 107, 181, 0.05), rgba(77, 184, 255, 0.05));
+            border-left: 4px solid var(--brand-pink);
+            padding: 2rem;
+            border-radius: 0 16px 16px 0;
+            margin-top: 2rem;
+        }
+
+        .policy-box ul {
+            list-style: none;
+        }
+
+        .policy-box li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #475569;
+        }
+
+        .policy-box li::before {
+            content: '🐾';
+            position: absolute;
+            left: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Decorative Orbs */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            opacity: 0.5;
+        }
+
+        .orb-pink {
+            background: var(--brand-pink);
+            width: 300px;
+            height: 300px;
+            top: -100px;
+            left: -100px;
+        }
+
+        .orb-blue {
+            background: var(--brand-blue);
+            width: 400px;
+            height: 400px;
+            bottom: -200px;
+            right: -100px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+            .section-title, .section-title-light { font-size: 2rem; text-align: center; }
+            .section-subtitle { text-align: center; margin: 0 auto 2rem; }
+            .btn { display: block; width: 100%; margin-bottom: 1rem; }
+            .btn-group { display: flex; flex-direction: column; }
+            
+            /* Mobile Image Ordering */
+            .mobile-reverse { display: flex; flex-direction: column-reverse; }
+            .mobile-reverse > div:last-child { margin-bottom: 2rem; }
+            
+            .trust-strip .grid-3 { gap: 1rem; }
+            .trust-item { justify-content: center; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="section-dark" style="min-height: 90vh; display: flex; align-items: center;">
+        <div class="orb orb-pink"></div>
+        <div class="orb orb-blue"></div>
+        <div class="container relative z-10">
+            <div class="grid-2 mobile-reverse">
+                <div>
+                    <span class="eyebrow eyebrow-gradient">Santa Ana's Premier Mobile Spaw</span>
+                    <h1 class="section-title-light">Luxury Dog Grooming,<br>Delivered to Your <span class="gradient-text">Driveway.</span></h1>
+                    <p class="section-subtitle">Skip the stressful car rides and crowded salons. Suds & Studs Spaw brings a modern, fully-equipped mobile grooming studio directly to your home in Orange County.</p>
+                    <div class="btn-group" style="display: flex; gap: 1rem; margin-top: 2rem;">
+                        <a href="#book" class="btn btn-glow">Book Your Spaw Day</a>
+                        <a href="#services" class="btn btn-outline btn-outline-dark">View Services</a>
+                    </div>
+                </div>
+                <div class="hero-visual-card">
+                    <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=800&q=80" alt="Fluffy white dog enjoying a bath at Suds and Studs Spaw mobile dog grooming in Santa Ana" class="float-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="trust-strip">
+        <div class="container">
+            <div class="grid-3">
+                <div class="trust-item">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>One-on-One Attention</span>
+                </div>
+                <div class="trust-item">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    <span>Self-Contained Mobile Studio</span>
+                </div>
+                <div class="trust-item">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                    <span>Cage-Free & Stress-Free</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="section-dark" id="services">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem; position: relative; z-index: 1;">
+                <span class="eyebrow eyebrow-gradient">Our Treatments</span>
+                <h2 class="section-title-light">Premium Grooming Services</h2>
+                <p class="section-subtitle" style="margin: 0 auto;">Tailored spa experiences for your furry best friend, performed right outside your door in Santa Ana.</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="glass-card">
+                    <div class="icon-wrapper">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                    </div>
+                    <h3>Luxury Bath & Brush</h3>
+                    <p class="body-copy" style="color: #94a3b8;">Deep cleansing hydro-massage bath with premium shampoos, blow dry, thorough brush out, nail trim, and ear cleaning.</p>
+                    <a href="#book" class="btn btn-outline btn-outline-dark" style="width: 100%; margin-top: 1rem;">Book Bath</a>
+                </div>
+
+                <div class="glass-card">
+                    <div class="icon-wrapper">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path></svg>
+                    </div>
+                    <h3>The Full Spaw Haircut</h3>
+                    <p class="body-copy" style="color: #94a3b8;">Everything in the Luxury Bath, plus a custom breed-standard or personality haircut crafted perfectly to your specifications.</p>
+                    <a href="#book" class="btn btn-outline btn-outline-dark" style="width: 100%; margin-top: 1rem;">Book Haircut</a>
+                </div>
+
+                <div class="glass-card">
+                    <div class="icon-wrapper">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                    </div>
+                    <h3>De-Shedding Treatment</h3>
+                    <p class="body-copy" style="color: #94a3b8;">Reduce shedding by up to 80%. Includes a specialized deshedding shampoo, conditioner, and intensive undercoat removal.</p>
+                    <a href="#book" class="btn btn-outline btn-outline-dark" style="width: 100%; margin-top: 1rem;">Book De-Shed</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="grid-2">
+                <div>
+                    <span class="eyebrow eyebrow-gradient">The Mobile Advantage</span>
+                    <h2 class="section-title">Traditional Salons Are Stressing Out Your Pet.</h2>
+                    <p class="body-copy">A common issue we see with pet owners in Orange County is dogs developing severe anxiety related to grooming. The process of being forced into a car, dropped off in a loud room filled with barking dogs, and left in a cage for hours takes a heavy toll.</p>
+                    <p class="body-copy">Over time, this causes your dog to associate grooming with fear rather than relief. If left unaddressed, grooming becomes a traumatic event that risks aggressive behavior or poor hygiene.</p>
+                    <p class="body-copy" style="font-weight: 700; color: var(--text-dark);">The Suds & Studs Solution:</p>
+                    <p class="body-copy">We eliminate the commute and the cages. By bringing our climate-controlled mobile spaw to your driveway, your dog receives undivided, one-on-one attention in a quiet, sanitized environment. The outcome? A beautiful, fresh pup who actually looks forward to their spaw day.</p>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=800&q=80" alt="Happy well groomed dog after mobile grooming service" class="float-img" style="border-radius: 24px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-dark">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem; position: relative; z-index: 1;">
+                <span class="eyebrow eyebrow-gradient">How It Works</span>
+                <h2 class="section-title-light">The Seamless Spaw Experience</h2>
+            </div>
+            
+            <div class="grid-4" style="position: relative; z-index: 1;">
+                <div class="light-card" style="background: rgba(255,255,255,0.02); border-color: rgba(255,255,255,0.05);">
+                    <div class="gradient-text" style="font-size: 3rem; font-weight: 800; margin-bottom: 1rem; line-height: 1;">01</div>
+                    <h3 style="color: #fff; margin-bottom: 0.5rem; font-size: 1.25rem;">Request Appointment</h3>
+                    <p style="color: #94a3b8; font-size: 0.95rem;">Fill out our online form or text us. We'll send appointment reminders at the beginning of your scheduled week.</p>
+                </div>
+                
+                <div class="light-card" style="background: rgba(255,255,255,0.02); border-color: rgba(255,255,255,0.05);">
+                    <div class="gradient-text" style="font-size: 3rem; font-weight: 800; margin-bottom: 1rem; line-height: 1;">02</div>
+                    <h3 style="color: #fff; margin-bottom: 0.5rem; font-size: 1.25rem;">We Come To You</h3>
+                    <p style="color: #94a3b8; font-size: 0.95rem;">Our self-contained mobile van arrives at your Santa Ana location. No need to provide water or power plugs.</p>
+                </div>
+
+                <div class="light-card" style="background: rgba(255,255,255,0.02); border-color: rgba(255,255,255,0.05);">
+                    <div class="gradient-text" style="font-size: 3rem; font-weight: 800; margin-bottom: 1rem; line-height: 1;">03</div>
+                    <h3 style="color: #fff; margin-bottom: 0.5rem; font-size: 1.25rem;">1-on-1 Grooming</h3>
+                    <p style="color: #94a3b8; font-size: 0.95rem;">Your dog receives exclusive cage-free attention with premium products, ensuring a calm and safe environment.</p>
+                </div>
+
+                <div class="light-card" style="background: rgba(255,255,255,0.02); border-color: rgba(255,255,255,0.05);">
+                    <div class="gradient-text" style="font-size: 3rem; font-weight: 800; margin-bottom: 1rem; line-height: 1;">04</div>
+                    <h3 style="color: #fff; margin-bottom: 0.5rem; font-size: 1.25rem;">Fresh & Happy</h3>
+                    <p style="color: #94a3b8; font-size: 0.95rem;">We return your impeccably groomed pup right to your front door, saving you hours of commuting and waiting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="grid-2">
+                <div>
+                    <span class="eyebrow eyebrow-gradient">Booking Guidelines</span>
+                    <h2 class="section-title">Cancellation & No Show Policy</h2>
+                    <p class="body-copy">Because our mobile routes are carefully planned to serve Orange County efficiently, last-minute cancellations severely impact our daily operations. We strive to provide the most reliable service possible, which requires clear communication.</p>
+                    
+                    <div class="policy-box">
+                        <p style="font-weight: 700; color: var(--text-dark); margin-bottom: 1rem;">Please note our standard spaw policies:</p>
+                        <ul>
+                            <li>Text reminders are sent out at the beginning of the week of your appointment.</li>
+                            <li>Cancellation notice is required at least <strong>48 hours in advance</strong>.</li>
+                            <li>Cancellations with less than 48 hours notice require a <strong>$35.00 "No Show" Fee</strong>. <br><em style="font-size: 0.85rem; color: #64748b;">(This fee may be avoided if we are able to fill your time slot last minute!)</em></li>
+                            <li>We provide a <strong>15 minute grace period</strong> for all appointments.</li>
+                            <li>2 or more "No Call No Shows" require full payment upfront to book your next appointment.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                     <img src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?auto=format&fit=crop&w=800&q=80" alt="Dog grooming policy and mobile van setup" class="float-img" style="border-radius: 24px; box-shadow: 0 10px 40px rgba(255, 107, 181, 0.15);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-dark">
+        <div class="container">
+            <div class="grid-2">
+                <div style="position: relative; z-index: 1;">
+                    <span class="eyebrow eyebrow-gradient">Learn More</span>
+                    <h2 class="section-title-light">Frequently Asked Questions</h2>
+                    <p class="section-subtitle">Got questions about mobile grooming in Santa Ana? We've got answers.</p>
+                    
+                    <div style="margin-top: 3rem;">
+                        <h3 style="color: #fff; margin-bottom: 1rem; font-size: 1.2rem;">Explore Our Service Areas:</h3>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <a href="/areas/santa-ana" class="btn btn-outline btn-outline-dark" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Santa Ana</a>
+                            <a href="/areas/orange" class="btn btn-outline btn-outline-dark" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Orange</a>
+                            <a href="/areas/tustin" class="btn btn-outline btn-outline-dark" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Tustin</a>
+                            <a href="/areas/irvine" class="btn btn-outline btn-outline-dark" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;">Irvine</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="position: relative; z-index: 1;">
+                    <div class="faq-item">
+                        <div class="faq-question" style="color: #fff;">What is your cancellation policy?</div>
+                        <div class="faq-answer">We require 48 hours notice for cancellations. Less than 48 hours notice incurs a $35 No Show fee, unless we can fill the spot. Two no-shows require prepayment for future bookings.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" style="color: #fff;">Do I need to provide water or power?</div>
+                        <div class="faq-answer">No. Our mobile grooming vans are completely self-contained with onboard fresh water tanks, water heaters, and power generators.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" style="color: #fff;">How long does a grooming session take?</div>
+                        <div class="faq-answer">Most standard spaw treatments take 1 to 2 hours. Because we offer one-on-one attention without cage drying, the process is efficient and much less stressful for your dog.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" style="color: #fff;">Is mobile grooming better for anxious dogs?</div>
+                        <div class="faq-answer">Absolutely. We eliminate car ride anxiety, separation anxiety from being left in a shop all day, and stress caused by other barking dogs. It is a quiet, 1-on-1 environment.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" style="color: #fff;">Do you require vaccination records?</div>
+                        <div class="faq-answer">Yes, for the safety of your pet and our groomers, we require proof of an up-to-date Rabies vaccination prior to your first appointment.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" style="color: #fff;">Can I stay in the van during the groom?</div>
+                        <div class="faq-answer">For safety reasons and to ensure your pet focuses on the groomer without trying to jump to you, pet parents are not permitted to stay inside the van during the active grooming process.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: linear-gradient(135deg, var(--darker-bg), var(--dark-bg)); text-align: center; border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="container relative z-10">
+            <h2 class="section-title-light" style="font-size: 3rem; margin-bottom: 1.5rem;">Ready for a Stress-Free Spaw Day?</h2>
+            <p class="section-subtitle" style="margin: 0 auto 3rem; color: #94a3b8; font-size: 1.2rem;">Join hundreds of happy pet parents in Santa Ana who have switched to the convenience of mobile grooming.</p>
+            <a href="#contact" class="btn btn-glow" style="font-size: 1.2rem; padding: 1.2rem 3rem;">Book Your Appointment Now</a>
+        </div>
+    </section>
+
+</body>
+</html>
